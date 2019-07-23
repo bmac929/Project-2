@@ -1,10 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "Iamr00t",
+    "database": "kidvoicedb",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": 3306
   },
   "test": {
     "username": "root",
