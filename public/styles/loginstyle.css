@@ -1,0 +1,15 @@
+body {
+    background-image: url("https://wallpaperset.com/w/full/6/c/d/238959.jpg");
+    background-size: cover
+ }
+ 
+ #login {
+    width: 960px;
+    margin: auto
+ }
+ 
+ h1{
+    font-size: 250px;
+    color: white;
+    text-align: center;
+ }

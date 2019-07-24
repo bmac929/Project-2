@@ -1,7 +1,33 @@
 var db = require("../models");
+var path = require("path");
+
 
 module.exports = function(app) {
   // Load index page
+  app.get("/welcome", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+  
+
+  
+  app.get("/store", function(req, res) {
+    db.UserData.findAll({}).then(function(dbExamples) {
+      res.render("store", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/home", function(req, res) {
+    db.UserData.findAll({}).then(function(dbExamples) {
+      res.render("home", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
   app.get("/hub", function(req, res) {
     db.UserData.findAll({}).then(function(dbExamples) {
       res.render("hub", {
