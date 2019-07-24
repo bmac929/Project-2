@@ -1,7 +1,7 @@
-<button id=startspeech>Click here to start Speech Recognition</button>
+{{!-- <button id=startspeech>Click here to start Speech Recognition</button>
 <button id=rock>rock</button>
 <button id=paper>paper</button>
-<button id=scissors>scissors</button>
+<button id=scissors>scissors</button> --}}
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4 card">
@@ -134,44 +134,43 @@
 
     // console.log(annyang)
 
-    function startspeech() {
 
-        var commands = {
-            'rock': function () {
-                alert("You chose rock!")
-                $("#userchoice").attr("src", "images/rock.png");
-                userchoice = "r";
-                randomselect();
-                compare();
-                updatescore();
-            },
-            'paper': function () {
-                alert("You chose paper!")
-                $("#userchoice").attr("src", "images/paper.png");
-                userchoice = "p";
-                randomselect();
-                compare();
-                updatescore();
-            },
-            'scissors': function () {
-                alert("You chose scissors!")
-                $("#userchoice").attr("src", "images/scissors.png");
-                userchoice = "s";
-                randomselect();
-                compare();
-                updatescore();
-            }
+    var commands = {
+        'rock': function () {
+            alert("You chose rock!")
+            $("#userchoice").attr("src", "images/rock.png");
+            userchoice = "r";
+            randomselect();
+            compare();
+            updatescore();
+        },
+        'paper': function () {
+            alert("You chose paper!")
+            $("#userchoice").attr("src", "images/paper.png");
+            userchoice = "p";
+            randomselect();
+            compare();
+            updatescore();
+        },
+        'scissors': function () {
+            alert("You chose scissors!")
+            $("#userchoice").attr("src", "images/scissors.png");
+            userchoice = "s";
+            randomselect();
+            compare();
+            updatescore();
+        }
 
-        };
+    };
 
-        // Add our commands to annyang
-        annyang.addCommands(commands);
+    // Add our commands to annyang
+    annyang.addCommands(commands);
 
-        // Start listening. You can call this here, or attach this call to an event, button, etc.
-        annyang.start();
-        annyang.isListening()
+    // Start listening. You can call this here, or attach this call to an event, button, etc.
+    annyang.start();
+    annyang.isListening()
 
-    }
+
 
 
 </script>
