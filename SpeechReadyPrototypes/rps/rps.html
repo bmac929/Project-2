@@ -19,15 +19,15 @@
     <nav class=" text-center navbar navbar-expand navbar-dark bg-warning">
         <div class="nav navbar-nav">
             <a class="nav-item nav-link active" href="#">Voice Commands Demo<span class="sr-only">(current)</span></a>
-            <button id=startspeech>Click here to start Speech Recognition</button>
-            <button id=rock>rock</button>
-            <button id=paper>paper</button>
-            <button id=scissors>scissors</button>
+
 
 
         </div>
     </nav>
-
+    <button id=startspeech>Click here to start Speech Recognition</button>
+    <button id=rock>rock</button>
+    <button id=paper>paper</button>
+    <button id=scissors>scissors</button>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4 card">
@@ -105,17 +105,17 @@ if (computerchoice === "s"){
                 (userchoice === "p" && computerchoice === "r")
                 ) {
                 // wins++;
-                $("#result").attr("src", "./img/WIN.png");
+                $("#result").attr("src", "images/WIN.png");
                 console.log("WIN")
             } else if (userchoice === computerchoice) {
                 // ties++;
-                $("#result").attr("src", "./img/TIE.png");
+                $("#result").attr("src", "images/TIE.png");
 
                 console.log("TIE")
 
             } else {
                 // losses++;
-                $("#result").attr("src", "./img/LOSS.png");
+                $("#result").attr("src", "images/LOSS.png");
                 console.log("LOSS")
             }
         }

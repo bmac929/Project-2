@@ -1,0 +1,177 @@
+<button id=startspeech>Click here to start Speech Recognition</button>
+<button id=rock>rock</button>
+<button id=paper>paper</button>
+<button id=scissors>scissors</button>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 card">
+        <h2 class="text-center">Rock Paper Scissors - Voice Controlled</h2>
+        <br>
+        <h3 class="text-center">You can say:</h3>
+        <div class="row">
+            <h4 class="col-md-4 text-center">Rock</h4>
+            <h4 class="col-md-4 text-center">Paper</h4>
+            <h4 class="col-md-4 text-center">Scissors</h4>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-2 card text-center bg-primary text-white">
+        <h4>YOU:</h4>
+        <img class="mx-auto py-3" id="userchoice" src="images/paper.png" alt="">
+    </div>
+    <div class="col-md-2 card text-center bg-success text-white">
+        <h4>RESULT:</h4>
+        <img class="mx-auto py-3" src="" id=result></img>
+    </div>
+    <div class="col-md-2 card text-center bg-secondary text-white">
+        <h4>COMPUTER:</h4>
+        <img class="mx-auto py-3" id="computerchoice" src="images/rock.png" alt="">
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="annyang.js"></script>
+<script>
+
+    var userchoice;
+    var computerchoice;
+    var array = ["r", "p", "s"]
+
+    /////////////COM Choice
+    function randomselect() {
+        computerchoice = array[Math.floor(Math.random() * array.length)];
+        console.log("Computer Choice is " + computerchoice)
+        if (computerchoice === "r") {
+            $("#computerchoice").attr("src", "images/rock.png");
+
+        }
+        if (computerchoice === "p") {
+            $("#computerchoice").attr("src", "images/paper.png");
+
+        }
+        if (computerchoice === "s") {
+            $("#computerchoice").attr("src", "images/scissors.png");
+
+        }
+    }
+
+    ////////////Compare results
+    function compare() {
+        console.log("User choice is " + userchoice)
+        if ((userchoice === "r" && computerchoice === "s") ||
+            (userchoice === "s" && computerchoice === "p") ||
+            (userchoice === "p" && computerchoice === "r")
+        ) {
+            // wins++;
+            $("#result").attr("src", "images/WIN.png");
+            console.log("WIN")
+        } else if (userchoice === computerchoice) {
+            // ties++;
+            $("#result").attr("src", "images/TIE.png");
+
+            console.log("TIE")
+
+        } else {
+            // losses++;
+            $("#result").attr("src", "images/LOSS.png");
+            console.log("LOSS")
+        }
+    }
+    //// add points to database
+    function updatescore() {
+
+    }
+
+    $("#startspeech").click(function () {
+        alert("READY TO LISTEN FOR VOICE COMMANDS");
+        startspeech();
+    });
+
+    $("#rock").click(function () {
+        // alert("You chose rock!")
+        $("#userchoice").attr("src", "images/rock.png");
+        userchoice = "r";
+        randomselect();
+        compare();
+        updatescore();
+    });
+
+    $("#paper").click(function () {
+        // alert("You chose paper!")
+        $("#userchoice").attr("src", "images/paper.png");
+        userchoice = "p";
+        randomselect();
+        compare();
+        updatescore();
+    });
+
+    $("#scissors").click(function () {
+        // alert("You chose scissors!")
+        $("#userchoice").attr("src", "images/scissors.png");
+        userchoice = "s";
+        randomselect();
+        compare();
+        updatescore();
+    });
+
+
+
+    // console.log(annyang)
+
+    function startspeech() {
+
+        var commands = {
+            'rock': function () {
+                alert("You chose rock!")
+                $("#userchoice").attr("src", "images/rock.png");
+                userchoice = "r";
+                randomselect();
+                compare();
+                updatescore();
+            },
+            'paper': function () {
+                alert("You chose paper!")
+                $("#userchoice").attr("src", "images/paper.png");
+                userchoice = "p";
+                randomselect();
+                compare();
+                updatescore();
+            },
+            'scissors': function () {
+                alert("You chose scissors!")
+                $("#userchoice").attr("src", "images/scissors.png");
+                userchoice = "s";
+                randomselect();
+                compare();
+                updatescore();
+            }
+
+        };
+
+        // Add our commands to annyang
+        annyang.addCommands(commands);
+
+        // Start listening. You can call this here, or attach this call to an event, button, etc.
+        annyang.start();
+        annyang.isListening()
+
+    }
+
+
+</script>
