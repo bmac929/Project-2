@@ -22,27 +22,27 @@
 
         // $(document).ready(function(){
 
-
         $("#still").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-still"));
         })
         $("#up").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingup"));
-            $("#character").animate({ top: "-=600px" }, "slow");
+            $("#character").animate({ top: "-=1000px" }, "slow");
+            app.get("/rps")
         })
         $("#down").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingdown"));
-            $("#character").animate({ top: "+=600px" }, "slow");
+            $("#character").animate({ top: "+=1000px" }, "slow");
 
         })
         $("#left").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingleft"));
-            $("#character").animate({ left: "-=600px" }, "slow");
+            $("#character").animate({ left: "-=1000px" }, "slow");
 
         });
         $("#right").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingright"));
-            $("#character").animate({ left: "+=600px" }, "slow");
+            $("#character").animate({ left: "+=1000px" }, "slow");
 
         });
 
@@ -56,19 +56,19 @@
         var commands = {
             'up': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingup"));
-                $("#character").animate({ top: "-=600px" }, "slow");
+                $("#character").animate({ top: "-=1000px" }, "slow");
             },
             'down': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingdown"));
-                $("#character").animate({ top: "+=600px" }, "slow");
+                $("#character").animate({ top: "+=1000px" }, "slow");
             },
             'left': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingleft"));
-                $("#character").animate({ left: "-=600px" }, "slow");
+                $("#character").animate({ left: "-=1000px" }, "slow");
             },
             'right': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingright"));
-                $("#character").animate({ left: "+=600px" }, "slow");
+                $("#character").animate({ left: "+=1000px" }, "slow");
             }
 
         };
