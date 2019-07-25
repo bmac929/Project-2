@@ -21,15 +21,15 @@
     <div class="col-md-3"></div>
     <div class="col-md-2 card text-center bg-primary text-white">
         <h4>YOU:</h4>
-        <img class="mx-auto py-3" id="userchoice" src="images/paper.png" alt="">
+        <img class="mx-auto my-auto py-auto" style="width: 75%" id="userchoice" src="images/paper.png" alt="">
     </div>
     <div class="col-md-2 card text-center bg-success text-white">
         <h4>RESULT:</h4>
-        <img class="mx-auto py-3" src="" id=result></img>
+        <img class="mx-auto my-auto py-auto" style="width: 75%" src="" id=result></img>
     </div>
     <div class="col-md-2 card text-center bg-secondary text-white">
         <h4>COMPUTER:</h4>
-        <img class="mx-auto py-3" id="computerchoice" src="images/rock.png" alt="">
+        <img class="mx-auto my-auto py-auto" style="width: 75%" id="computerchoice" src="images/rock.png" alt="">
     </div>
     <div class="col-md-3"></div>
 
@@ -137,7 +137,6 @@
 
     var commands = {
         'rock': function () {
-            alert("You chose rock!")
             $("#userchoice").attr("src", "images/rock.png");
             userchoice = "r";
             randomselect();
@@ -145,7 +144,6 @@
             updatescore();
         },
         'paper': function () {
-            alert("You chose paper!")
             $("#userchoice").attr("src", "images/paper.png");
             userchoice = "p";
             randomselect();
@@ -153,12 +151,14 @@
             updatescore();
         },
         'scissors': function () {
-            alert("You chose scissors!")
             $("#userchoice").attr("src", "images/scissors.png");
             userchoice = "s";
             randomselect();
             compare();
             updatescore();
+        },
+        'hub': function(){
+            alert("going back to hub")
         }
 
     };
