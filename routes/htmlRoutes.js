@@ -1,9 +1,34 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
+
+
   // Load index page
-  app.get("/hub", function(req, res) {
-    db.UserData.findAll({}).then(function(dbExamples) {
+  app.get("/", function (req, res) {
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.send('hello')
+  });
+
+  app.get("/store", function (req, res) {
+    db.UserData.findAll({}).then(function (dbExamples) {
+      res.render("store", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/home", function (req, res) {
+    db.UserData.findAll({}).then(function (dbExamples) {
+      res.render("home", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/hub", function (req, res) {
+    db.UserData.findAll({}).then(function (dbExamples) {
       res.render("hub", {
         msg: "Welcome!",
         examples: dbExamples
@@ -11,8 +36,8 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/rps", function(req, res) {
-    db.UserData.findAll({}).then(function(dbExamples) {
+  app.get("/rps", function (req, res) {
+    db.UserData.findAll({}).then(function (dbExamples) {
       res.render("rps", {
         msg: "Welcome!",
         examples: dbExamples
@@ -20,8 +45,8 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/collector", function(req, res) {
-    db.UserData.findAll({}).then(function(dbExamples) {
+  app.get("/collector", function (req, res) {
+    db.UserData.findAll({}).then(function (dbExamples) {
       res.render("collector", {
         msg: "Welcome!",
         examples: dbExamples
@@ -39,7 +64,8 @@ module.exports = function(app) {
   // });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
+
 };

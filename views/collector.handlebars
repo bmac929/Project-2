@@ -68,18 +68,22 @@
     <button class="col-md-1 text-center buttons text-white" style="background-color: #80727B" id="firestone">
         <img src="/images/Fire_Stone.png" style="width:100%" alt="Firestone">
         <h4 class="pt-2"> Fire</h4>
+        <h4 id="firenum"></h4>
     </button>
     <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="waterstone">
         <img src="/images/Water_Stone.png" style="width:100%" alt="Waterstone">
         <h4 class="pt-2"> Water</h4>
+        <h4 id="waternum"></h4>
     </button>
     <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="thunderstone">
         <img src="/images/Thunder_Stone.png" style="width:100%" alt="Thunderstone">
         <h4 class="pt-2"> Thunder</h4>
+        <h4 id="thundernum"></h4>
     </button>
     <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="leafstone">
         <img src="/images/Dawn_Stone.png" style="width:100%" alt="Leafstone">
         <h4 class="pt-2"> Dawn</h4>
+        <h4 id="leafnum"></h4>
     </button>
     <div class="col-md-4"></div>
 </div>
@@ -102,6 +106,11 @@
         watervalue = Math.floor(Math.random() * 12) + 1;
         thundervalue = Math.floor(Math.random() * 12) + 1;
         leafvalue = Math.floor(Math.random() * 12) + 1;
+        $("#firenum").text(firevalue);
+        $("#waternum").text(watervalue);
+        $("#thundernum").text(thundervalue);
+        $("#leafnum").text(leafvalue);
+
         console.log("Values in order: Fire, water, thunder, leaf");
         console.log(firevalue, watervalue, thundervalue, leafvalue);
     };
@@ -189,7 +198,6 @@
 
     var commands = {
         'fire': function () {
-            alert("You chose fire!")
             console.log(firevalue);
             crystaltotal += firevalue;
             console.log("Current Total = " + crystaltotal);
@@ -197,7 +205,6 @@
             valuechecker();
         },
         'water': function () {
-            alert("You chose water!")
             console.log(watervalue);
             crystaltotal += watervalue;
             console.log("Current Total = " + crystaltotal);
@@ -205,7 +212,6 @@
             valuechecker();
         },
         'thunder': function () {
-            alert("You chose thunder!")
             console.log(thundervalue);
             crystaltotal += thundervalue;
             console.log("Current Total = " + crystaltotal);
@@ -213,12 +219,14 @@
             valuechecker();
         },
         'dawn': function () {
-            alert("You chose dawn!")
             console.log(leafvalue);
             crystaltotal += leafvalue;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+        },
+        'hub': function(){
+            alert("going back to hub")
         }
 
     };

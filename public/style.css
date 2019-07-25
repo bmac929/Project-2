@@ -1,0 +1,128 @@
+#header{
+    background-color: blue;
+    width: 960px;
+    height: 60px;
+    margin: auto;
+    margin-top: 0px;
+    border-radius: 25px;
+}
+
+#head{
+    color: white;
+    font-size: 50px;
+    display: inline-block;
+}
+ #container{
+     width: 960px;
+     height: 500px;
+     background-color: yellow;
+    font-size: 40px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+ }
+ #uname,
+ #points{
+     display:  inline-block;
+ }
+
+ footer{
+    background-color: blue;
+    width: 960px;
+    height: 150px;
+    margin: auto;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    position: fixed;
+    left: 18.5%;
+    bottom: .5%;
+}
+#prompts{
+    color: black;
+    background-color: white;
+    height: 100px;
+    width: 700px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    top: -100px;
+    position: relative;
+}
+
+#crono{
+    margin-left: 70px;
+    margin-top: 15px;
+    height: 125px;
+}
+
+#up{
+    width: 60px;
+    margin: auto;
+    margin-top: 20px;
+    left: 48%;
+}
+
+#down{
+    position: fixed;
+    bottom: 50px;
+    width: 60px;
+    margin: auto;
+    left: 48%;
+    
+}
+
+#right{
+    position: fixed;
+    right: 5%;
+    top: 50%;
+}
+
+#left{
+    position: fixed;
+    left: 5%;
+    top: 50%;
+}
+
+.button{
+    height: 40px;
+    width: 60px;
+}
+
+#hub{
+    background-image: url("http://www.bestfunforall.com/better/imgs/Cartoon%20house%20wallpaper%20%202.jpg");
+
+    background-size: cover;
+
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.speech-bubble {
+    background-color: #f8f8f8;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    width: 190px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    left: 55%;
+    top: 30%;
+}
+
+.speech-bubble .arrow {
+    border-style: solid;
+    position: absolute;
+    color: white
+}
+ 
+.bottom {
+    border-color: #c8c8c8 transparent transparent transparent;
+    border-width: 8px 8px 0px 8px;
+    bottom: -8px;
+}
+
+#prompts, #crono{
+    display: inline-block;
+}
+

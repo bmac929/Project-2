@@ -15,34 +15,41 @@
     <p><img id="character" src="./images/Crono-Front.gif" data-still="./images/Crono-Front.gif"
             data-walkingleft="./images/Crono-walkingleft.gif" data-walkingright="./images/Crono-walkingright.gif"
             data-walkingup="./images/Crono-walkingup.gif" data-walkingdown="./images/Crono-walkingdown.gif"
-            data-state="still" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px"></p>
+            data-state="still" style="position:absolute; top:50%; left: 50%; height: 15%"></p>
 
 
     <script>
 
-        // $(document).ready(function(){
+        var footsteps = new Audio("./sounds/footsteps.mp3");
 
+        // $(document).ready(function(){
 
         $("#still").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-still"));
         })
         $("#up").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingup"));
-            $("#character").animate({ top: "-=600px" }, "slow");
+            footsteps.play();
+            $("#character").animate({ top: "-20%" }, 2000);
+            $.load("/rps");
+
         })
         $("#down").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingdown"));
-            $("#character").animate({ top: "+=600px" }, "slow");
+            footsteps.play();
+            $("#character").animate({ top: "+=1100px" }, 2000);
 
         })
         $("#left").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingleft"));
-            $("#character").animate({ left: "-=600px" }, "slow");
+            footsteps.play();
+            $("#character").animate({ left: "-10%" }, 2000);
 
         });
         $("#right").on("click", function () {
             $("#character").attr("src", $("#character").attr("data-walkingright"));
-            $("#character").animate({ left: "+=600px" }, "slow");
+            footsteps.play();
+            $("#character").animate({ left: "+=1100px" }, 2000);
 
         });
 
@@ -56,19 +63,23 @@
         var commands = {
             'up': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingup"));
-                $("#character").animate({ top: "-=600px" }, "slow");
+                footsteps.play();
+                $("#character").animate({ top: "-=1100px" }, 2000);
             },
             'down': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingdown"));
-                $("#character").animate({ top: "+=600px" }, "slow");
+                footsteps.play();
+                $("#character").animate({ top: "+=1100px" }, 2000);
             },
             'left': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingleft"));
-                $("#character").animate({ left: "-=600px" }, "slow");
+                footsteps.play();
+                $("#character").animate({ left: "-=1100px" }, 2000);
             },
             'right': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingright"));
-                $("#character").animate({ left: "+=600px" }, "slow");
+                footsteps.play();
+                $("#character").animate({ left: "+=1100px" }, 2000);
             }
 
         };
