@@ -1,0 +1,88 @@
+<body id="hub">
+    <div id="up">
+        <button class="button" type="button"><i class="fas fa-arrow-circle-up"></i>Up</button>
+    </div>
+    <div id="left">
+        <button class="button" type="button"><i class="fas fa-arrow-circle-left"></i>Left</button>
+    </div>
+    <div id="right">
+        <button class="button" type="button">Right<i class="fas fa-arrow-circle-right"></i></button>
+    </div>
+    <div id="down">
+        <button class="button" type="button">Down<i class="fas fa-arrow-circle-down"></i></button>
+    </div>
+
+    <p><img id="character" src="./images/Crono-Front.gif" data-still="./images/Crono-Front.gif"
+            data-walkingleft="./images/Crono-walkingleft.gif" data-walkingright="./images/Crono-walkingright.gif"
+            data-walkingup="./images/Crono-walkingup.gif" data-walkingdown="./images/Crono-walkingdown.gif"
+            data-state="still" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px"></p>
+
+
+    <script>
+
+        // $(document).ready(function(){
+
+        $("#still").on("click", function () {
+            $("#character").attr("src", $("#character").attr("data-still"));
+        })
+        $("#up").on("click", function () {
+            $("#character").attr("src", $("#character").attr("data-walkingup"));
+            $("#character").animate({ top: "-=1000px" }, "slow");
+            app.get("/rps")
+        })
+        $("#down").on("click", function () {
+            $("#character").attr("src", $("#character").attr("data-walkingdown"));
+            $("#character").animate({ top: "+=1000px" }, "slow");
+
+        })
+        $("#left").on("click", function () {
+            $("#character").attr("src", $("#character").attr("data-walkingleft"));
+            $("#character").animate({ left: "-=1000px" }, "slow");
+
+        });
+        $("#right").on("click", function () {
+            $("#character").attr("src", $("#character").attr("data-walkingright"));
+            $("#character").animate({ left: "+=1000px" }, "slow");
+
+        });
+
+        $("#startspeech").click(function () {
+            alert("READY TO LISTEN FOR VOICE COMMANDS");
+            startspeech();
+        });
+
+
+
+        var commands = {
+            'up': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingup"));
+                $("#character").animate({ top: "-=1000px" }, "slow");
+            },
+            'down': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingdown"));
+                $("#character").animate({ top: "+=1000px" }, "slow");
+            },
+            'left': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingleft"));
+                $("#character").animate({ left: "-=1000px" }, "slow");
+            },
+            'right': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingright"));
+                $("#character").animate({ left: "+=1000px" }, "slow");
+            }
+
+        };
+
+        // Add our commands to annyang
+        annyang.addCommands(commands);
+
+        // Start listening. You can call this here, or attach this call to an event, button, etc.
+        annyang.start();
+        annyang.isListening()
+
+
+
+        console.log(annyang)
+// })
+    </script>
+</body>
