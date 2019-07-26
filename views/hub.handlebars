@@ -17,12 +17,16 @@
             data-walkingup="./images/Crono-walkingup.gif" data-walkingdown="./images/Crono-walkingdown.gif"
             data-state="still" style="position:absolute; top:50%; left: 50%; height: 15%"></p>
 
-
+    <div class="speech-bubble">
+        <div class="arrow bottom right"></div>
+        Tell me where to go!
+        Say: Up, Down, Left, or Right!
+    </div>
     <script>
 
         var footsteps = new Audio("./sounds/footsteps.mp3");
-    var hubloop = new Audio("./sounds/hubloop.mp3");
-                hubloop.play();
+        var hubloop = new Audio("./sounds/hubloop.mp3");
+        hubloop.play();
 
 
         // $(document).ready(function(){
@@ -71,33 +75,33 @@
                 $("#character").attr("src", $("#character").attr("data-walkingup"));
                 footsteps.play();
                 $("#character").animate({ top: "-=1100px" }, 2000);
-                            setTimeout(function () {
-                window.location.href = "/rps"
-            }, 1750)
+                setTimeout(function () {
+                    window.location.href = "/rps"
+                }, 1750)
             },
             'down': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingdown"));
                 footsteps.play();
                 $("#character").animate({ top: "+=1100px" }, 2000);
-                                            setTimeout(function () {
-                window.location.href = "/store"
-            }, 1750)
+                setTimeout(function () {
+                    window.location.href = "/store"
+                }, 1750)
             },
             'left': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingleft"));
                 footsteps.play();
                 $("#character").animate({ left: "-=1100px" }, 2000);
-                                            setTimeout(function () {
-                window.location.href = "/collector"
-            }, 1750)
+                setTimeout(function () {
+                    window.location.href = "/collector"
+                }, 1750)
             },
             'right': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingright"));
                 footsteps.play();
                 $("#character").animate({ left: "+=1100px" }, 2000);
-                                            setTimeout(function () {
-                window.location.href = "/home"
-            }, 1750)
+                setTimeout(function () {
+                    window.location.href = "/home"
+                }, 1750)
             }
 
         };

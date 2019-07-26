@@ -35,8 +35,8 @@ app.engine(
 app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
-// Routes
-require('./routes/auth.js')(app, passport);
+// Routes 
+require('./routes/auth.js') (app, passport);
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
