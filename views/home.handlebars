@@ -1,0 +1,94 @@
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <h3 class="text-center col-md-4 card mx-3 my-1 col-md-1">COLLECTION</h3>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4"></div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+            <h3 class="card bg-info mt-2">Hero</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/HERO.png" alt="">
+        </div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+            <h3 class="card bg-info mt-2">Fairy</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/GIRLFAIRY.png" alt="">
+        </div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+            <h3 class="card bg-info mt-2">Owl</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/OWL.png" alt="">
+        </div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: show; ">
+            <h3 class="card bg-info mt-2">Pig</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/PIG.png" alt="">
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4"></div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: show; ">
+            <h3 class="card bg-info mt-2">Villain</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/VILLIAN.png" alt="">
+        </div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+            <h3 class="card bg-info mt-2">Genie</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/GIRLGENIE.png" alt="">
+        </div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+            <h3 class="card bg-info mt-2">Unicorn</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/UNICORN.png" alt="">
+        </div>
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: show; ">
+            <h3 class="card bg-info mt-2">Shark</h3>
+            <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/SHARK.png" alt="">
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+    <script>
+    var hero = new Audio("./sounds/hero.mp3");
+    var fairy = new Audio("./sounds/fairy.mp3");
+    var owl = new Audio("./sounds/owl.mp3");
+    var pig = new Audio("./sounds/pig.mp3");
+    var villain = new Audio("./sounds/villain.mp3");
+    var genie = new Audio("./sounds/genie.mp3");
+    var unicorn = new Audio("./sounds/unicorn.mp3");
+    var shark = new Audio("./sounds/shark.mp3");
+
+        var commands = {
+        'hero': function () {
+            hero.play();
+        },
+        'fairy': function () {
+            fairy.play();
+        },
+        'owl': function () {
+            owl.play();
+        },
+        'pig': function () {
+            pig.play();
+        },
+        'villain': function () {
+            villain.play();
+        },
+        'genie': function () {
+            genie.play();
+        },
+        'unicorn': function () {
+            unicorn.play();
+        },
+        'shark': function () {
+            shark.play();
+        },
+        'town': function(){
+            window.location.href = "/hub"
+        }
+    };
+
+    // Add our commands to annyang
+    annyang.addCommands(commands);
+
+    // Start listening. You can call this here, or attach this call to an event, button, etc.
+    annyang.start();
+    annyang.isListening()
+    </script>

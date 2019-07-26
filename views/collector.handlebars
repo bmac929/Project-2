@@ -1,11 +1,19 @@
-<div class="row">
-            <div class="col-md-4"></div>
-            <h1 class=" col-md-4 text-center">Eevee's Stone Collector <img style="width: 33%"src="/images/eevee.png">        <button class="text-center" id=startspeech>Click here to start Speech Recognition</button>
-            </h1>
-        <div class="col-md-4"></div>
-        </div>
+<div id="header">
+    <header id="head">
+        Username: <div id="uname"></div> Points: <div id="points"></div>
 
-        <!-- <div class="row">
+    </header>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <h1 class=" col-md-4 text-center">Eevee's Stone Collector <img style="width: 33%" src="/images/eevee.png">
+    </h1>
+    <div class="col-md-4"></div>
+</div>
+
+<!-- <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8 card" style="background-color: #FAF3DD">
                 <h5><strong>Instructions:</strong></h5>
@@ -35,17 +43,17 @@
             </div>
             <div class="col-md-2"></div>
         </div> -->
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-2 card text-center font-weight-bold" style="background-color: #BCD979">
-                <h2> Goal Number: <div id="GoalNumber"></div>
-                </h2>
-            </div>
-            <div class="col-md-2 text-center card" style="background-color: #9DAD6F">
-                <h2>Current  Total: <div id="totalscore"></div>
-                </h2>
-            </div>
-            <!-- <div class="col-md-1 card text-center font-weight-bold" style="background-color: #C3DFE0">
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-2 card text-center font-weight-bold" style="background-color: #BCD979">
+        <h2> Goal Number: <div id="GoalNumber"></div>
+        </h2>
+    </div>
+    <div class="col-md-2 text-center card" style="background-color: #9DAD6F">
+        <h2>Current Total: <div id="totalscore"></div>
+        </h2>
+    </div>
+    <!-- <div class="col-md-1 card text-center font-weight-bold" style="background-color: #C3DFE0">
                 <h3>Wins: <div id="Wins"></div>
                 </h3>
             </div>
@@ -53,173 +61,217 @@
                 <h3>Losses: <div id="Losses"></div>
                 </h3>
             </div> -->
-            <div class="col-md-4"></div>
-        </div>
-        <br>
-        <div class="row text-white" id="crystalstashtext">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 card text-center font-weight-bold" style="background-color: #80727B">
-                <h3>Stone Stash</h3>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row pb-2 text-center text-white" id="crystalstash">
-            <div class="col-md-4"></div>
-            <button class="col-md-1 text-center buttons text-white" style="background-color: #80727B" id="firestone">
-                <img src="/images/Fire_Stone.png" style="width:100%" alt="Firestone">
-                <h4 class="pt-2"> Fire</h4>
-            </button>
-            <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="waterstone">
-                <img src="/images/Water_Stone.png" style="width:100%" alt="Waterstone">
-                <h4 class="pt-2"> Water</h4>
-            </button>
-            <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="thunderstone">
-                <img src="/images/Thunder_Stone.png" style="width:100%" alt="Thunderstone">
-                <h4 class="pt-2"> Thunder</h4>
-            </button>
-            <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="leafstone">
-                <img src="/images/Dawn_Stone.png" style="width:100%" alt="Leafstone">
-                <h4 class="pt-2"> Dawn</h4>
-            </button>
-            <div class="col-md-4"></div>
-        </div>
-        <script>// Version without passing functions
+    <div class="col-md-4"></div>
+</div>
+<div class="row text-white" id="crystalstashtext">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 card text-center font-weight-bold" style="background-color: #80727B">
+        <h3>Stone Stash</h3>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+<div class="row pb-2 text-center text-white" id="crystalstash">
+    <div class="col-md-4"></div>
+    <button class="col-md-1 text-center buttons text-white" style="background-color: #80727B" id="firestone">
+        <img src="/images/Fire_Stone.png" style="width:100%" alt="Firestone">
+        <h4 class="pt-2"> Fire</h4>
+        <h4 id="firenum"></h4>
+    </button>
+    <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="waterstone">
+        <img src="/images/Water_Stone.png" style="width:100%" alt="Waterstone">
+        <h4 class="pt-2"> Water</h4>
+        <h4 id="waternum"></h4>
+    </button>
+    <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="thunderstone">
+        <img src="/images/Thunder_Stone.png" style="width:100%" alt="Thunderstone">
+        <h4 class="pt-2"> Thunder</h4>
+        <h4 id="thundernum"></h4>
+    </button>
+    <button class="col-md-1 text-center text-white buttons" style="background-color: #80727B" id="leafstone">
+        <img src="/images/Dawn_Stone.png" style="width:100%" alt="Leafstone">
+        <h4 class="pt-2"> Dawn</h4>
+        <h4 id="leafnum"></h4>
+    </button>
+    <div class="col-md-4"></div>
+</div>
 
-var firevalue = 0;
-var watervalue = 0;
-var thundervalue = 0;
-var leafvalue = 0;
-var goalnumber = 0;
-var wins = 0;
-var losses = 0;
-var crystaltotal = 0;
+<footer>
+    <div id="prompts">Instructions:</div>
+    <img id="crono" src="images/Crono-Front.gif">
 
-//game start - display wins and losses
-
-// assign random value to each stone and generate the goal score
-function randomizecrystalvalue() {
-    firevalue = Math.floor(Math.random() * 12) + 1;
-    watervalue = Math.floor(Math.random() * 12) + 1;
-    thundervalue = Math.floor(Math.random() * 12) + 1;
-    leafvalue = Math.floor(Math.random() * 12) + 1;
-    console.log("Values in order: Fire, water, thunder, leaf");
-    console.log(firevalue, watervalue, thundervalue, leafvalue);
-};
-
-function randomizegoalnumber() {
-    goalnumber = Math.floor(Math.random() * 102) + 19;
-    console.log("Goal number is...")
-    console.log(goalnumber)
-    $("#GoalNumber").text(goalnumber);
-}
-
-//show Total, wins, and losses
-
-function showinitialvalues() {
-    $("#totalscore").text(crystaltotal);
-    $("#Wins").text(wins);
-    $("#Losses").text(losses);
+</footer>
+<script>// Version without passing functions
+    var username = "bob";
+    var usercoins = 0;
 
 
-}
+    var firevalue = 0;
+    var watervalue = 0;
+    var thundervalue = 0;
+    var leafvalue = 0;
+    var goalnumber = 0;
+    var wins = 0;
+    var losses = 0;
+    var crystaltotal = 0;
+    var winsound = new Audio("./sounds/win.mp3");
+    var losesound = new Audio("./sounds/lose.mp3");
+    var chipsound = new Audio("./sounds/chip_sound.mp3");
 
-// click commands to add value of each crystal to total and update screen with current crystal total
-$("#firestone").on("click", function () {
-    console.log(firevalue);
-    crystaltotal += firevalue;
-    console.log("Current Total = " + crystaltotal);
-    $("#totalscore").text(crystaltotal);
-    valuechecker();
-})
+    //game start - display wins and losses
 
-$("#waterstone").on("click", function () {
-    console.log(watervalue);
-    crystaltotal += watervalue;
-    console.log("Current Total = " + crystaltotal);
-    $("#totalscore").text(crystaltotal);
-    valuechecker();
-})
+    // assign random value to each stone and generate the goal score
+    function randomizecrystalvalue() {
+        firevalue = Math.floor(Math.random() * 12) + 1;
+        watervalue = Math.floor(Math.random() * 12) + 1;
+        thundervalue = Math.floor(Math.random() * 12) + 1;
+        leafvalue = Math.floor(Math.random() * 12) + 1;
+        $("#firenum").text(firevalue);
+        $("#waternum").text(watervalue);
+        $("#thundernum").text(thundervalue);
+        $("#leafnum").text(leafvalue);
 
-$("#thunderstone").on("click", function () {
-    console.log(thundervalue);
-    crystaltotal += thundervalue;
-    console.log("Current Total = " + crystaltotal);
-    $("#totalscore").text(crystaltotal);
-    valuechecker();
-})
+        console.log("Values in order: Fire, water, thunder, leaf");
+        console.log(firevalue, watervalue, thundervalue, leafvalue);
+    };
 
-$("#leafstone").on("click", function () {
-    console.log(leafvalue);
-    crystaltotal += leafvalue;
-    console.log("Current Total = " + crystaltotal);
-    $("#totalscore").text(crystaltotal);
-    valuechecker();
-})
-function valuechecker() {
-    if (crystaltotal === goalnumber) {
-        wins++;
+    function randomizegoalnumber() {
+        goalnumber = Math.floor(Math.random() * 102) + 19;
+        console.log("Goal number is...")
+        console.log(goalnumber)
+        $("#GoalNumber").text(goalnumber);
+    }
+
+    //show Total, wins, and losses
+
+    function showinitialvalues() {
+        $("#totalscore").text(crystaltotal);
         $("#Wins").text(wins);
-        gamereset();
-    }
-    else if (crystaltotal > goalnumber) {
-        losses++;
         $("#Losses").text(losses);
-        gamereset();
+
+
     }
-    else { }
-}
 
-function gamereset() {
-    randomizecrystalvalue();
-    randomizegoalnumber();
-    crystaltotal = 0;
-    showinitialvalues();
-}
+    // click commands to add value of each crystal to total and update screen with current crystal total
+    $("#firestone").on("click", function () {
+        console.log(firevalue);
+        chipsound.play();
+        crystaltotal += firevalue;
+        console.log("Current Total = " + crystaltotal);
+        $("#totalscore").text(crystaltotal);
+        valuechecker();
+    })
 
-gamereset()
-//if totalscore<goalnumber keep going
-//else if totalscore = goalnumber win and increment wins count
-//else if totalscore> goal number lose and increment losses count
+    $("#waterstone").on("click", function () {
+        console.log(watervalue);
+        chipsound.play();
 
-$("#startspeech").click(function () {
-    alert("READY TO LISTEN FOR VOICE COMMANDS");
-    startspeech();
-});
+        crystaltotal += watervalue;
+        console.log("Current Total = " + crystaltotal);
+        $("#totalscore").text(crystaltotal);
+        valuechecker();
+    })
 
-function startspeech() {
+    $("#thunderstone").on("click", function () {
+        console.log(thundervalue);
+        chipsound.play();
+
+        crystaltotal += thundervalue;
+        console.log("Current Total = " + crystaltotal);
+        $("#totalscore").text(crystaltotal);
+        valuechecker();
+    })
+
+    $("#leafstone").on("click", function () {
+        console.log(leafvalue);
+        chipsound.play();
+
+        crystaltotal += leafvalue;
+        console.log("Current Total = " + crystaltotal);
+        $("#totalscore").text(crystaltotal);
+        valuechecker();
+    })
+    function valuechecker() {
+        if (crystaltotal === goalnumber) {
+            winsound.play();
+
+            wins++;
+            usercoins += 200;
+            $("#Wins").text(wins);
+            gamereset();
+
+        }
+        else if (crystaltotal > goalnumber) {
+            losses++;
+            losesound.play();
+
+            $("#Losses").text(losses);
+            gamereset();
+        }
+        else { }
+    }
+
+    function gamereset() {
+        randomizecrystalvalue();
+        randomizegoalnumber();
+        crystaltotal = 0;
+        showinitialvalues();
+        $("#uname").text(username);
+        $("#points").text(usercoins);
+
+
+    }
+
+    gamereset()
+    //if totalscore<goalnumber keep going
+    //else if totalscore = goalnumber win and increment wins count
+    //else if totalscore> goal number lose and increment losses count
+
+    $("#startspeech").click(function () {
+        alert("READY TO LISTEN FOR VOICE COMMANDS");
+        startspeech();
+    });
+
 
     var commands = {
         'fire': function () {
-            alert("You chose fire!")
             console.log(firevalue);
             crystaltotal += firevalue;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+            chipsound.play();
+
         },
         'water': function () {
-            alert("You chose water!")
             console.log(watervalue);
             crystaltotal += watervalue;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+            chipsound.play();
+
         },
         'thunder': function () {
-            alert("You chose thunder!")
             console.log(thundervalue);
             crystaltotal += thundervalue;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+            chipsound.play();
+
         },
         'dawn': function () {
-            alert("You chose dawn!")
             console.log(leafvalue);
             crystaltotal += leafvalue;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+            chipsound.play();
+
+        },
+        'town': function () {
+            window.location.href = "/hub"
+
         }
 
     };
@@ -231,7 +283,6 @@ function startspeech() {
     annyang.start();
     annyang.isListening()
 
-}
 
-console.log(annyang)
+    console.log(annyang)
 </script>
