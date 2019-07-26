@@ -1,3 +1,11 @@
+<div id="header">
+    <header id="head">
+        Username: <div id="uname"></div> Points: <div id="points"></div>
+
+    </header>
+</div>
+
+
 <div class="row">
     <div class="col-md-4"></div>
     <h1 class=" col-md-4 text-center">Eevee's Stone Collector <img style="width: 33%" src="/images/eevee.png">
@@ -55,7 +63,6 @@
             </div> -->
     <div class="col-md-4"></div>
 </div>
-<br>
 <div class="row text-white" id="crystalstashtext">
     <div class="col-md-4"></div>
     <div class="col-md-4 card text-center font-weight-bold" style="background-color: #80727B">
@@ -87,9 +94,15 @@
     </button>
     <div class="col-md-4"></div>
 </div>
+
+<footer>
+    <div id="prompts">Instructions:</div>
+    <img id="crono" src="images/Crono-Front.gif">
+
+</footer>
 <script>// Version without passing functions
-var username = "bob";
-var usercoins = 0;
+    var username = "bob";
+    var usercoins = 0;
 
 
     var firevalue = 0;
@@ -182,7 +195,7 @@ var usercoins = 0;
             winsound.play();
 
             wins++;
-            usercoins +=200;
+            usercoins += 200;
             $("#Wins").text(wins);
             gamereset();
 
@@ -226,7 +239,7 @@ var usercoins = 0;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
-                    chipsound.play();
+            chipsound.play();
 
         },
         'water': function () {
@@ -235,7 +248,7 @@ var usercoins = 0;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
-                    chipsound.play();
+            chipsound.play();
 
         },
         'thunder': function () {
@@ -244,7 +257,7 @@ var usercoins = 0;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
-                    chipsound.play();
+            chipsound.play();
 
         },
         'dawn': function () {
@@ -253,11 +266,11 @@ var usercoins = 0;
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
-                    chipsound.play();
+            chipsound.play();
 
         },
         'town': function () {
-                        window.location.href = "/hub"
+            window.location.href = "/hub"
 
         }
 
