@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Iamr00t",
+    "password": "Brandon9",
     "database": "kidvoicedb",
     "host": "localhost",
     "dialect": "mysql",
