@@ -48,6 +48,16 @@
     crossorigin="anonymous"></script>
 <script src="annyang.js"></script>
 <script>
+   var username = "bob";
+var usercoins = 0;
+
+        $("#uname").text(username);
+        $("#points").text(usercoins);
+   
+    var rpswin = new Audio("./sounds/rpswin.mp3");
+    var rpslose = new Audio("./sounds/rpslose.mp3");
+    var rpstie = new Audio("./sounds/rpstie.mp3");
+
 
     var userchoice;
     var computerchoice;
@@ -81,15 +91,25 @@
             // wins++;
             $("#result").attr("src", "images/WIN.png");
             console.log("WIN")
+            rpswin.play();
+            usercoins += 50;
+                    $("#points").text(usercoins);
+
+
+
         } else if (userchoice === computerchoice) {
             // ties++;
             $("#result").attr("src", "images/TIE.png");
 
             console.log("TIE")
+            rpstie.play();
+
 
         } else {
             // losses++;
             $("#result").attr("src", "images/LOSS.png");
+            rpslose.play();
+
             console.log("LOSS")
         }
     }
@@ -157,8 +177,8 @@
             compare();
             updatescore();
         },
-        'hub': function(){
-            alert("going back to hub")
+        'town': function () {
+            window.location.href = "/hub"
         }
 
     };
@@ -169,7 +189,6 @@
     // Start listening. You can call this here, or attach this call to an event, button, etc.
     annyang.start();
     annyang.isListening()
-
 
 
 

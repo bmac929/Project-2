@@ -88,6 +88,9 @@
     <div class="col-md-4"></div>
 </div>
 <script>// Version without passing functions
+var username = "bob";
+var usercoins = 0;
+
 
     var firevalue = 0;
     var watervalue = 0;
@@ -97,6 +100,9 @@
     var wins = 0;
     var losses = 0;
     var crystaltotal = 0;
+    var winsound = new Audio("./sounds/win.mp3");
+    var losesound = new Audio("./sounds/lose.mp3");
+    var chipsound = new Audio("./sounds/chip_sound.mp3");
 
     //game start - display wins and losses
 
@@ -135,6 +141,7 @@
     // click commands to add value of each crystal to total and update screen with current crystal total
     $("#firestone").on("click", function () {
         console.log(firevalue);
+        chipsound.play();
         crystaltotal += firevalue;
         console.log("Current Total = " + crystaltotal);
         $("#totalscore").text(crystaltotal);
@@ -143,6 +150,8 @@
 
     $("#waterstone").on("click", function () {
         console.log(watervalue);
+        chipsound.play();
+
         crystaltotal += watervalue;
         console.log("Current Total = " + crystaltotal);
         $("#totalscore").text(crystaltotal);
@@ -151,6 +160,8 @@
 
     $("#thunderstone").on("click", function () {
         console.log(thundervalue);
+        chipsound.play();
+
         crystaltotal += thundervalue;
         console.log("Current Total = " + crystaltotal);
         $("#totalscore").text(crystaltotal);
@@ -159,6 +170,8 @@
 
     $("#leafstone").on("click", function () {
         console.log(leafvalue);
+        chipsound.play();
+
         crystaltotal += leafvalue;
         console.log("Current Total = " + crystaltotal);
         $("#totalscore").text(crystaltotal);
@@ -166,12 +179,18 @@
     })
     function valuechecker() {
         if (crystaltotal === goalnumber) {
+            winsound.play();
+
             wins++;
+            usercoins +=200;
             $("#Wins").text(wins);
             gamereset();
+
         }
         else if (crystaltotal > goalnumber) {
             losses++;
+            losesound.play();
+
             $("#Losses").text(losses);
             gamereset();
         }
@@ -183,6 +202,10 @@
         randomizegoalnumber();
         crystaltotal = 0;
         showinitialvalues();
+        $("#uname").text(username);
+        $("#points").text(usercoins);
+
+
     }
 
     gamereset()
@@ -203,6 +226,8 @@
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+                    chipsound.play();
+
         },
         'water': function () {
             console.log(watervalue);
@@ -210,6 +235,8 @@
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+                    chipsound.play();
+
         },
         'thunder': function () {
             console.log(thundervalue);
@@ -217,6 +244,8 @@
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+                    chipsound.play();
+
         },
         'dawn': function () {
             console.log(leafvalue);
@@ -224,9 +253,12 @@
             console.log("Current Total = " + crystaltotal);
             $("#totalscore").text(crystaltotal);
             valuechecker();
+                    chipsound.play();
+
         },
-        'hub': function(){
-            alert("going back to hub")
+        'town': function () {
+                        window.location.href = "/hub"
+
         }
 
     };

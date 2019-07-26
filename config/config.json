@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Iamr00t",
-    "database": "kidvoicedb",
+    "database": "sequelize_passport",
     "host": "localhost",
     "dialect": "mysql",
     "port": 3306
