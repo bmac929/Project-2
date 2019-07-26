@@ -21,6 +21,9 @@
     <script>
 
         var footsteps = new Audio("./sounds/footsteps.mp3");
+    var hubloop = new Audio("./sounds/hubloop.mp3");
+                hubloop.play();
+
 
         // $(document).ready(function(){
 
@@ -28,10 +31,13 @@
             $("#character").attr("src", $("#character").attr("data-still"));
         })
         $("#up").on("click", function () {
+            setTimeout(function () {
+                window.location.href = "/rps"
+            }, 1750)
             $("#character").attr("src", $("#character").attr("data-walkingup"));
             footsteps.play();
             $("#character").animate({ top: "-20%" }, 2000);
-            $.load("/rps");
+
 
         })
         $("#down").on("click", function () {
@@ -65,21 +71,33 @@
                 $("#character").attr("src", $("#character").attr("data-walkingup"));
                 footsteps.play();
                 $("#character").animate({ top: "-=1100px" }, 2000);
+                            setTimeout(function () {
+                window.location.href = "/rps"
+            }, 1750)
             },
             'down': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingdown"));
                 footsteps.play();
                 $("#character").animate({ top: "+=1100px" }, 2000);
+                                            setTimeout(function () {
+                window.location.href = "/store"
+            }, 1750)
             },
             'left': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingleft"));
                 footsteps.play();
                 $("#character").animate({ left: "-=1100px" }, 2000);
+                                            setTimeout(function () {
+                window.location.href = "/collector"
+            }, 1750)
             },
             'right': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingright"));
                 footsteps.play();
                 $("#character").animate({ left: "+=1100px" }, 2000);
+                                            setTimeout(function () {
+                window.location.href = "/home"
+            }, 1750)
             }
 
         };
