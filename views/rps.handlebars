@@ -52,6 +52,8 @@
             coins.
         </div>
 
+        <span id="userscore" data-score={{Score}}></span>
+        <span id="userfirst" data-first={{firstname}}></span>
 
     </footer>
 </body>
@@ -68,8 +70,8 @@
     crossorigin="anonymous"></script>
 <script src="annyang.js"></script>
 <script>
-    var username = "bob";
-    var usercoins = 0;
+    var username = $("#userfirst").attr("data-first");
+    var usercoins = parseInt($("#userscore").attr("data-score"));
 
     $("#uname").text(username);
     $("#points").text(usercoins);
@@ -114,6 +116,13 @@
             rpswin.play();
             usercoins += 50;
             $("#points").text(usercoins);
+                        $.ajax({
+                url: "/api/updatescore",
+                method: "PUT",
+                data: {
+                    Score: usercoins
+                }
+            })
 
 
 

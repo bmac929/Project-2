@@ -63,6 +63,18 @@
         </div>
         <div class="col-md-4"></div>
     </div>
+
+<span id="userscore" data-score={{Score}}></span>
+<span id="userfirst" data-first={{firstname}}></span>
+<span id="T1" data-T1={{T1store}}></span>
+<span id="T2" data-T2={{T2store}}></span>
+<span id="T3" data-T3={{T3store}}></span>
+<span id="T4" data-T4={{T4store}}></span>
+<span id="T5" data-T5={{T5store}}></span>
+<span id="T6" data-T6={{T6store}}></span>
+<span id="T7" data-T7={{T7store}}></span>
+<span id="T8" data-T8={{T8store}}></span>
+
     <footer>
         <div id="prompts">Instructions: Say Town to leave.
         </div>
@@ -71,8 +83,17 @@
     </footer>
 </body>
 <script>
-    var username = "bob";
-    var usercoins = 5000;
+    var username = $("#userfirst").attr("data-first");
+    var usercoins = parseInt($("#userscore").attr("data-score"));
+
+    var T1store = $("#T1").attr("data-T1");
+    var T2store = $("#T2").attr("data-T2");
+    var T3store = $("#T3").attr("data-T3");
+    var T4store = $("#T4").attr("data-T4");
+    var T5store = $("#T5").attr("data-T5");
+    var T6store = $("#T6").attr("data-T6");
+    var T7store = $("#T7").attr("data-T7");
+    var T8store = $("#T8").attr("data-T8");
 
     $("#uname").text(username);
     $("#points").text(usercoins);
@@ -86,60 +107,191 @@
     var unicorn = new Audio("./sounds/unicorn.mp3");
     var shark = new Audio("./sounds/shark.mp3");
 
+    function updatetrophiesstore() {
+        if (T1store==="false") {
+            $("#hero").attr("style", "display: none;");
+            console.log("in the T1 function")
+        };
+         if (T2store==="false") {
+            $("#fairy").attr("style", "display: none;");
+                        console.log("in the T2 function")
+        }
+         if (T3store==="false") {
+            $("#owl").attr("style", "display: none;");
+        }
+         if (T4store==="false") {
+            $("#pig").attr("style", "display: none;");
+        }
+         if (T5store==="false") {
+            $("#villain").attr("style", "display: none;");
+        }
+         if (T6store==="false") {
+            $("#genie").attr("style", "display: none;");
+        }
+         if (T7store==="false") {
+            $("#unicorn").attr("style", "display: none;");
+        }
+         if (T8store==="false") {
+            $("#shark").attr("style", "display: none;");
+        }
+    }
+
     var commands = {
         'hero': function () {
-            hero.play();
-            usercoins -= 100;
-            $("#hero").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        }
-        ,
+            if ((usercoins - 100) >= 0) {
+                hero.play();
+                usercoins -= 100;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T1store: false,
+                    }
+                })
+
+                $("#hero").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            }
+                        else{
+            alert("need more coins for that")
+        }},
+        
         'fairy': function () {
-            fairy.play();
-            usercoins -= 100;
-            $("#fairy").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        },
+            if ((usercoins - 100) >= 0) {
+
+                fairy.play();
+                usercoins -= 100;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T2store: false
+                    }
+                })
+                $("#fairy").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            }
+            else{
+            alert("need more coins for that")
+        }},        
         'owl': function () {
-            owl.play();
-            usercoins -= 300;
-            $("#owl").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        },
+            if ((usercoins - 300) >= 0) {
+                owl.play();
+                usercoins -= 300;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T3store: false
+                    }
+                })
+                $("#owl").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            } 
+            else{
+            alert("need more coins for that")
+        }},        
         'pig': function () {
-            pig.play();
-            usercoins -= 300;
-            $("#pig").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        },
+            if ((usercoins - 300) >= 0) {
+                pig.play();
+                usercoins -= 300;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T4store: false
+                    }
+                })
+                $("#pig").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            } 
+            else{
+            alert("need more coins for that")
+        }},        
         'villain': function () {
-            villain.play();
-            usercoins -= 500;
-            $("#villain").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        },
+            if ((usercoins - 500) >= 0) {
+
+                villain.play();
+                usercoins -= 500;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T5store: false
+                    }
+                })
+                $("#villain").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            }
+            else{
+            alert("need more coins for that")
+        }},
         'genie': function () {
-            genie.play();
-            usercoins -= 500;
-            $("#genie").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        },
-        'unicorn': function () {
-            unicorn.play();
-            usercoins -= 900;
-            $("#unicorn").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        },
-        'shark': function () {
-            shark.play();
-            usercoins -= 900;
-            $("#shark").attr("style", "display: none;");
-            $("#points").text(usercoins);
-        },
-        'town': function () {
-            window.location.href = "/hub"
-        }
-    };
+            if ((usercoins - 500) >= 0) {
+
+                genie.play();
+                usercoins -= 500;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T6store: false
+                    }
+                })
+                $("#genie").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            }
+            else{
+            alert("need more coins for that")
+        }},            
+            'unicorn': function () {
+                            if ((usercoins - 900) >= 0) {
+
+                unicorn.play();
+                usercoins -= 900;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T7store: false
+                    }
+                })
+                $("#unicorn").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            }
+            else{
+            alert("need more coins for that")
+        }},            
+            'shark': function () {
+                            if ((usercoins - 900) >= 0) {
+
+                shark.play();
+                usercoins -= 900;
+                $.ajax({
+                    url: "/api/updatescore",
+                    method: "PUT",
+                    data: {
+                        Score: usercoins,
+                        T8store: false
+                    }
+                })
+                $("#shark").attr("style", "display: none;");
+                $("#points").text(usercoins);
+            }
+            else{
+            alert("need more coins for that")
+        }},            
+            'town': function () {
+                window.location.href = "/hub"
+            }
+        };
 
     // Add our commands to annyang
     annyang.addCommands(commands);
@@ -147,4 +299,7 @@
     // Start listening. You can call this here, or attach this call to an event, button, etc.
     annyang.start();
     annyang.isListening()
+
+        updatetrophiesstore();
+
 </script>

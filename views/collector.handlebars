@@ -101,6 +101,9 @@
         <div class="col-md-4"></div>
     </div>
 
+    <span id="userscore" data-score={{Score}}></span>
+    <span id="userfirst" data-first={{firstname}}></span>
+
     <footer>
         <div id="prompts">Instructions: Say Fire, Water, Thunder, or Dawn. Add points to match the goal number. Don't go
             over! 500 coins for a win!
@@ -110,8 +113,8 @@
     </footer>
 </body>
 <script>// Version without passing functions
-    var username = "bob";
-    var usercoins = 0;
+    var username = $("#userfirst").attr("data-first");
+    var usercoins = parseInt($("#userscore").attr("data-score"));
 
 
     var firevalue = 0;
@@ -206,6 +209,13 @@
             wins++;
             usercoins += 200;
             $("#Wins").text(wins);
+            $.ajax({
+                url: "/api/updatescore",
+                method: "PUT",
+                data: {
+                    Score: usercoins
+                }
+            })
             gamereset();
 
         }
