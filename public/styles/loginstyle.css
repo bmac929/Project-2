@@ -5,7 +5,8 @@ body {
  
  #login {
     width: 960px;
-    margin: auto
+    margin: auto;
+    text-align: center;
  }
  
  h1{
