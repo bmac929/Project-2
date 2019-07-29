@@ -173,9 +173,14 @@
     display: inline-block;
 }
 
-#welcomeBody {
+#welcomeBody, #signInBody, #signUpBody {
     background-image: url("https://wallpaperset.com/w/full/6/c/d/238959.jpg");
-    background-size: cover
+    background-size: cover;
+    height: 100%;
+ }
+
+ #signUpBody{
+     margin-top: 0px;
  }
  
  #login {
@@ -215,19 +220,32 @@
     margin-top: 25%;
     margin-left: 30%;
     font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px black;
 
 }
 
 #password{
     margin-left: 32%;
     font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 #signIn, #signUp{
     margin-left: 45%;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#signI{
+    text-shadow: 2px 2px black;
+    color: white;
 }
 #account{
-    margin-left: 42%
+    margin-left: 42%;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 #name{
@@ -235,6 +253,8 @@
     margin-bottom: -23%;
     margin-left: 18%;
     font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 #signUpButton, #signInButton{
