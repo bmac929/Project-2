@@ -17,19 +17,19 @@
     </div>
     <div class="row text-center">
         <div class="col-md-4"></div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="hero">
             <h3 class="card bg-info mt-2">Hero</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/HERO.png" alt="">
         </div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="fairy">
             <h3 class="card bg-info mt-2">Fairy</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/GIRLFAIRY.png" alt="">
         </div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="owl">
             <h3 class="card bg-info mt-2">Owl</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/OWL.png" alt="">
         </div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: show; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="pig">
             <h3 class="card bg-info mt-2">Pig</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/PIG.png" alt="">
         </div>
@@ -37,24 +37,36 @@
     </div>
     <div class="row text-center">
         <div class="col-md-4"></div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: show; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="villain">
             <h3 class="card bg-info mt-2">Villain</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/VILLIAN.png" alt="">
         </div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="genie">
             <h3 class="card bg-info mt-2">Genie</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/GIRLGENIE.png" alt="">
         </div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="unicorn">
             <h3 class="card bg-info mt-2">Unicorn</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/UNICORN.png" alt="">
         </div>
-        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: show; ">
+        <div class=" card mx-1 my-1 col-md-1 border bg-success" style="display: none; " id="shark">
             <h3 class="card bg-info mt-2">Shark</h3>
             <img class="mx-auto my-auto py-3" style="width: 50%" src="./images/SHARK.png" alt="">
         </div>
         <div class="col-md-4"></div>
     </div>
+
+    <span id="userscore" data-score={{Score}}></span>
+    <span id="userfirst" data-first={{firstname}}></span>
+    <span id="T1" data-T1={{T1store}}></span>
+    <span id="T2" data-T2={{T2store}}></span>
+    <span id="T3" data-T3={{T3store}}></span>
+    <span id="T4" data-T4={{T4store}}></span>
+    <span id="T5" data-T5={{T5store}}></span>
+    <span id="T6" data-T6={{T6store}}></span>
+    <span id="T7" data-T7={{T7store}}></span>
+    <span id="T8" data-T8={{T8store}}></span>
+
     <footer>
         <div id="prompts">Instructions: Say Town to leave.
         </div>
@@ -63,6 +75,22 @@
     </footer>
 </body>
 <script>
+
+    var username = $("#userfirst").attr("data-first");
+    var usercoins = parseInt($("#userscore").attr("data-score"));
+
+    var T1store = $("#T1").attr("data-T1");
+    var T2store = $("#T2").attr("data-T2");
+    var T3store = $("#T3").attr("data-T3");
+    var T4store = $("#T4").attr("data-T4");
+    var T5store = $("#T5").attr("data-T5");
+    var T6store = $("#T6").attr("data-T6");
+    var T7store = $("#T7").attr("data-T7");
+    var T8store = $("#T8").attr("data-T8");
+
+   $("#uname").text(username);
+    $("#points").text(usercoins);
+
     var hero = new Audio("./sounds/hero.mp3");
     var fairy = new Audio("./sounds/fairy.mp3");
     var owl = new Audio("./sounds/owl.mp3");
@@ -71,6 +99,35 @@
     var genie = new Audio("./sounds/genie.mp3");
     var unicorn = new Audio("./sounds/unicorn.mp3");
     var shark = new Audio("./sounds/shark.mp3");
+
+
+        function updatetrophieshome() {
+        if (T1store==="false") {
+            $("#hero").attr("style", "display: show;");
+            console.log("in the T1 function")
+        }
+         if (T2store==="false") {
+            $("#fairy").attr("style", "display: show;");
+        }
+         if (T3store==="false") {
+            $("#owl").attr("style", "display: show;");
+        }
+         if (T4store==="false") {
+            $("#pig").attr("style", "display: show;");
+        }
+         if (T5store==="false") {
+            $("#villain").attr("style", "display: show;");
+        }
+         if (T6store==="false") {
+            $("#genie").attr("style", "display: show;");
+        }
+         if (T7store==="false") {
+            $("#unicorn").attr("style", "display: show;");
+        }
+         if (T8store==="false") {
+            $("#shark").attr("style", "display: show;");
+        }
+    }
 
     var commands = {
         'hero': function () {
@@ -108,4 +165,7 @@
     // Start listening. You can call this here, or attach this call to an event, button, etc.
     annyang.start();
     annyang.isListening()
+
+            updatetrophieshome();
+
 </script>

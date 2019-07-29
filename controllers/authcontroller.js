@@ -8,8 +8,24 @@ exports.signin = function(req, res) {
 	res.render('signin');
 };
 
-exports.dashboard = function(req, res) {
-	res.render('dashboard', req.user);
+exports.hub = function(req, res) {
+	res.render('hub', req.user);
+};
+
+exports.collector = function(req, res) {
+	res.render('collector', req.user);
+};
+
+exports.rps = function(req, res) {
+	res.render('rps', req.user);
+};
+
+exports.home = function(req, res) {
+	res.render('home', req.user);
+};
+
+exports.store = function(req, res) {
+	res.render('store', req.user);
 };
 
 exports.logout = function(req, res) {

@@ -9,50 +9,18 @@ module.exports = function (app) {
     res.send('hello')
   });
 
-  app.get("/store", function (req, res) {
-    db.User.findAll({}).then(function (dbExamples) {
-      res.render("store", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
 
-  app.get("/home", function (req, res) {
-    db.User.findAll({}).then(function (dbExamples) {
-      res.render("home", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
 
-  app.get("/hub", function (req, res) {
-    db.User.findAll({}).then(function (dbExamples) {
-      res.render("hub", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
 
-  app.get("/rps", function (req, res) {
-    db.User.findAll({}).then(function (dbExamples) {
-      res.render("rps", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
 
-  app.get("/collector", function (req, res) {
-    db.User.findAll({}).then(function (dbExamples) {
-      res.render("collector", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
+
+// app.get("/collector", function (req, res) {{
+//   res.render("collector", {
+//   });
+// };
+// });
+
+
 
   // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
