@@ -5,7 +5,6 @@ The purpose of this web application is to create a fun and engaging learning env
 The splash screen will welcome the user and allow them to decide where they would like to go: Play a Game (from our catalog of previous projects in this class) or go to the store and purchase trophies based on the amount of coins/points they’ve earned from winning games.  Current user and current score will be displayed live on all pages when interacting with the app. Databases storing each user and their scores will be dynamically updated on the back end.  This is sure to be a fun experience for all!
 
 **Technologies Used:**
-- Speech
 - Sequelize 
 - MySQL
 - Node.js
@@ -41,5 +40,11 @@ The user can view all of the trophies for sale in the Trophy Store.  Depending o
 Collection**
 
 The user can view the trophies they have purchased.  This is also a reflection of the information that is in the database. The more trophies they purchase, the larger their collection grows! 
+
+The first three functions of CRUD are used in the following ways:
+
+C(reate): Sign-up/Log-in
+R(ead): Every page load (games, store, home, etc.)
+U(pdate): Game won (and update of coins for user), purchase of trophies (through use of booleans)
 
 Members: Joe Nidever, Bryan McCann, Brooke Meyer, Mike Garcia 
