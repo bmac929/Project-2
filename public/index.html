@@ -17,13 +17,27 @@
     <h1 id="welcomeHead" class="ml2">Welcome</h1>
 
     <div id="login">
-        <button type="button" class="btn btn-primary btn-lg">Sign In</button>
-        <button type="button" class="btn btn-warning btn-lg">Sign Up</button>
+        <button type="button" id="signin" class="btn btn-primary btn-lg" action="/signin">Sign In</button>
+        <button type="button" id="signup" class="btn btn-warning btn-lg"action="/signup">Sign Up</button>
     </div>
     <div>
         <img src="images/imageedit_4_4102534357.png">
     </div>
     <script src="/js/app.js"></script>
 </body>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script>
+        $("#signin").on("click", function () {
+            window.location.href = "/signin"
+        })
+        $("#signup").on("click", function () {
+            window.location.href = "/signup"
+        })
+
+
+</script>
 
 </html>

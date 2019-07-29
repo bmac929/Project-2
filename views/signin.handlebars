@@ -18,14 +18,24 @@
         <div id="signIn">
             <input id="signI" class="btn" type="submit" value="Sign In" />
         </div>
-
+<br> <br>
         <div id="question">
             <div id="account">
                 Don't have an account?
             </div>
-            <div id="signUpButton">
+            <div id="signUpButton" class="signup">
                 <button id="button" type="button">Sign Up</button>
             </div>
         </div>
     </form>
 </body>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script>
+        $(".signup").on("click", function () {
+            window.location.href = "/signup"
+        })
+</script>
