@@ -49,7 +49,7 @@
     </div>
     <footer>
         <div id="prompts">Instructions: Say Rock, Paper, or Scissors and I'll pick one too. If you win, you get 50
-            coins.
+            coins. Say Go Back to go back to town.
         </div>
 
         <span id="userscore" data-score={{Score}}></span>
@@ -116,7 +116,7 @@
             rpswin.play();
             usercoins += 50;
             $("#points").text(usercoins);
-                        $.ajax({
+            $.ajax({
                 url: "/api/updatescore",
                 method: "PUT",
                 data: {
@@ -142,71 +142,39 @@
             console.log("LOSS")
         }
     }
-    //// add points to database
-    function updatescore() {
-
-    }
-
-    $("#startspeech").click(function () {
-        alert("READY TO LISTEN FOR VOICE COMMANDS");
-        startspeech();
-    });
-
-    $("#rock").click(function () {
-        // alert("You chose rock!")
-        $("#userchoice").attr("src", "images/rock.png");
-        userchoice = "r";
-        randomselect();
-        compare();
-        updatescore();
-    });
-
-    $("#paper").click(function () {
-        // alert("You chose paper!")
-        $("#userchoice").attr("src", "images/paper.png");
-        userchoice = "p";
-        randomselect();
-        compare();
-        updatescore();
-    });
-
-    $("#scissors").click(function () {
-        // alert("You chose scissors!")
-        $("#userchoice").attr("src", "images/scissors.png");
-        userchoice = "s";
-        randomselect();
-        compare();
-        updatescore();
-    });
-
-
 
     // console.log(annyang)
 
 
     var commands = {
+        'spock': function () {
+            $("#userchoice").attr("src", "images/spock.jpg");
+        },
+        'lizard': function () {
+            $("#userchoice").attr("src", "images/LIZARD.png");
+        },
         'rock': function () {
             $("#userchoice").attr("src", "images/rock.png");
             userchoice = "r";
             randomselect();
             compare();
-            updatescore();
+            
         },
         'paper': function () {
             $("#userchoice").attr("src", "images/paper.png");
             userchoice = "p";
             randomselect();
             compare();
-            updatescore();
+            
         },
         'scissors': function () {
             $("#userchoice").attr("src", "images/scissors.png");
             userchoice = "s";
             randomselect();
             compare();
-            updatescore();
+            
         },
-        'town': function () {
+        'go back': function () {
             window.location.href = "/hub"
         }
 

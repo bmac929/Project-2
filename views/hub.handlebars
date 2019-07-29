@@ -19,8 +19,13 @@
 
     <div class="speech-bubble">
         <div class="arrow bottom right"></div>
-        Tell me where to go!
-        Say: Up, Down, Left, or Right!
+        <p>Tell me where to go!</p>
+        <p>Say: </p> 
+        <p>Go Up for </p>
+        <p>Rock Paper Scissors</p>
+        <p>Go Left for Stone Collector</p>
+        <p>Go Down for the Store</p>
+        <p>Go Right to go Home!</p>
     </div>
     <script>
 
@@ -29,73 +34,34 @@
         hubloop.play();
 
 
-        // $(document).ready(function(){
-
-        $("#still").on("click", function () {
-            $("#character").attr("src", $("#character").attr("data-still"));
-        })
-        $("#up").on("click", function () {
-            setTimeout(function () {
-                window.location.href = "/rps"
-            }, 1750)
-            $("#character").attr("src", $("#character").attr("data-walkingup"));
-            footsteps.play();
-            $("#character").animate({ top: "-20%" }, 2000);
-
-
-        })
-        $("#down").on("click", function () {
-            $("#character").attr("src", $("#character").attr("data-walkingdown"));
-            footsteps.play();
-            $("#character").animate({ top: "+=1100px" }, 2000);
-
-        })
-        $("#left").on("click", function () {
-            $("#character").attr("src", $("#character").attr("data-walkingleft"));
-            footsteps.play();
-            $("#character").animate({ left: "-10%" }, 2000);
-
-        });
-        $("#right").on("click", function () {
-            $("#character").attr("src", $("#character").attr("data-walkingright"));
-            footsteps.play();
-            $("#character").animate({ left: "+=1100px" }, 2000);
-
-        });
-
-        $("#startspeech").click(function () {
-            alert("READY TO LISTEN FOR VOICE COMMANDS");
-            startspeech();
-        });
-
 
 
         var commands = {
-            'up': function () {
+            'go up': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingup"));
                 footsteps.play();
-                $("#character").animate({ top: "-=1100px" }, 2000);
+                $("#character").animate({ top: "-50%" }, 2000);
                 setTimeout(function () {
                     window.location.href = "/rps"
                 }, 1750)
             },
-            'down': function () {
+            'go down': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingdown"));
                 footsteps.play();
-                $("#character").animate({ top: "+=1100px" }, 2000);
+                $("#character").animate({ top: "+100%" }, 2000);
                 setTimeout(function () {
                     window.location.href = "/store"
                 }, 1750)
             },
-            'left': function () {
+            'go left': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingleft"));
                 footsteps.play();
-                $("#character").animate({ left: "-=1100px" }, 2000);
+                $("#character").animate({ left: "-10%" }, 2000);
                 setTimeout(function () {
                     window.location.href = "/collector"
                 }, 1750)
             },
-            'right': function () {
+            'go right': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingright"));
                 footsteps.play();
                 $("#character").animate({ left: "+=1100px" }, 2000);

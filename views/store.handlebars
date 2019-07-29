@@ -76,7 +76,7 @@
 <span id="T8" data-T8={{T8store}}></span>
 
     <footer>
-        <div id="prompts">Instructions: Say Town to leave.
+        <div id="prompts">Instructions: Say the name of the trophy you would like to buy. Say Go Back to go back to town.
         </div>
 
 
@@ -105,7 +105,7 @@
     var villain = new Audio("./sounds/villain.mp3");
     var genie = new Audio("./sounds/genie.mp3");
     var unicorn = new Audio("./sounds/unicorn.mp3");
-    var shark = new Audio("./sounds/shark.mp3");
+    var fail = new Audio("./sounds/fail.mp3");
 
     function updatetrophiesstore() {
         if (T1store==="false") {
@@ -154,7 +154,7 @@
                 $("#points").text(usercoins);
             }
                         else{
-            alert("need more coins for that")
+            fail.play();
         }},
         
         'fairy': function () {
@@ -174,7 +174,7 @@
                 $("#points").text(usercoins);
             }
             else{
-            alert("need more coins for that")
+            fail.play();
         }},        
         'owl': function () {
             if ((usercoins - 300) >= 0) {
@@ -192,7 +192,7 @@
                 $("#points").text(usercoins);
             } 
             else{
-            alert("need more coins for that")
+            fail.play();
         }},        
         'pig': function () {
             if ((usercoins - 300) >= 0) {
@@ -210,7 +210,7 @@
                 $("#points").text(usercoins);
             } 
             else{
-            alert("need more coins for that")
+            fail.play();
         }},        
         'villain': function () {
             if ((usercoins - 500) >= 0) {
@@ -229,7 +229,7 @@
                 $("#points").text(usercoins);
             }
             else{
-            alert("need more coins for that")
+            fail.play();
         }},
         'genie': function () {
             if ((usercoins - 500) >= 0) {
@@ -248,7 +248,7 @@
                 $("#points").text(usercoins);
             }
             else{
-            alert("need more coins for that")
+            fail.play();
         }},            
             'unicorn': function () {
                             if ((usercoins - 900) >= 0) {
@@ -267,7 +267,7 @@
                 $("#points").text(usercoins);
             }
             else{
-            alert("need more coins for that")
+            fail.play();
         }},            
             'shark': function () {
                             if ((usercoins - 900) >= 0) {
@@ -286,9 +286,9 @@
                 $("#points").text(usercoins);
             }
             else{
-            alert("need more coins for that")
+            fail.play();
         }},            
-            'town': function () {
+        'go back': function () {
                 window.location.href = "/hub"
             }
         };
