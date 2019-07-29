@@ -249,7 +249,6 @@
 }
 
 #name{
-    margin-top: 20%;
     margin-bottom: -23%;
     margin-left: 18%;
     font-size: 30px;
@@ -261,3 +260,16 @@
     margin-left: 45%;
 }
 
+#logo{
+    margin-left: 30%;
+    margin-top: -5%;
+}
+
+#question{
+    margin-bottom: 2%;
+    
+}
+
+#info{
+    margin-top: -25%;
+}
