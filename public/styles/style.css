@@ -1,15 +1,19 @@
 #header{
+    
     width: 960px;
     height: 60px;
     margin: auto;
     margin-top: 0px;
     border-radius: 10px;
+    align-content: center;
+    padding-left: 250px;
 }
 
 #head{
-    color: black;
+    color: white;
     font-size: 50px;
     display: inline-block;
+    
 }
  #container{
      width: 960px;
@@ -28,30 +32,37 @@
 
  footer{
     width: 960px;
-    height: 150px;
+    height: 100px;
     margin: auto;
     margin-bottom: 0px;
     border-radius: 25px;
     position: fixed;
     left: 18.5%;
     bottom: .5%;
+
 }
 #prompts{
     color: black;
-    background-color: white;
     height: 100px;
     width: 700px;
-    margin-left: 10px;
+    margin-left: 130px;
     border-radius: 5px;
-    font-size: 35px;
-    top: 10px;
+    font-size: 25px;
+    top: 25px;
     position: relative;
+    background-color: white;
+    
 }
 
 #crono{
     margin-left: 70px;
-    margin-top: -20px;
-    height: 125px;
+    margin-top: -5px;
+    height: 90px;
+}
+#coin{
+    margin-left: 70px;
+    margin-top: -5px;
+    height: 90px;
 }
 
 #up{
@@ -96,6 +107,44 @@
     background-position: center;
 }
 
+#home{
+    background-image: url("http://www.bestfunforall.com/better/imgs/Cartoon%20house%20wallpaper%20%203.jpg");
+
+    background-size: cover;
+
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#store{
+    background-image: url("http://www.bestfunforall.com/better/imgs/Cartoon%20house%20wallpaper%20%200.jpg");
+
+    background-size: cover;
+
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#rps{
+    background-image: url("http://www.bestfunforall.com/freepik1/imgs/Cartoon%20House%20Wallpapers%20%204.jpg");
+
+    background-size: cover;
+
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#collector{
+    background-image: url("http://www.bestfunforall.com/better/imgs/Cartoon%20house%20wallpaper%20%207.jpeg");
+
+    background-size: cover;
+
+    background-attachment: fixed;
+    background-position: center;
+}
+ #eevee, #goal, #current{
+     color: white;
+ }
 .speech-bubble {
     background-color: #f8f8f8;
     border: 1px solid #c8c8c8;
@@ -161,3 +210,34 @@
    position: absolute;
    color: white
 }
+
+#email{
+    margin-top: 25%;
+    margin-left: 30%;
+    font-size: 30px;
+
+}
+
+#password{
+    margin-left: 32%;
+    font-size: 30px;
+}
+
+#signIn, #signUp{
+    margin-left: 45%;
+}
+#account{
+    margin-left: 42%
+}
+
+#name{
+    margin-top: 20%;
+    margin-bottom: -23%;
+    margin-left: 18%;
+    font-size: 30px;
+}
+
+#signUpButton, #signInButton{
+    margin-left: 45%;
+}
+

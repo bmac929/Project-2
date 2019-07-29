@@ -1,4 +1,15 @@
+<body id="home">
+    <div id="header">
+        <header id="head">
+            <img id="crono" src="images/Crono-Front.gif">
+            <div id="uname"></div>
+            <img id="coin" src="images/coin.png">
+            <div id="points"></div>
 
+
+        </header>
+    </div>
+    <br><br>
     <div class="row">
         <div class="col-md-4"></div>
         <h3 class="text-center col-md-4 card mx-3 my-1 col-md-1">COLLECTION</h3>
@@ -44,8 +55,14 @@
         </div>
         <div class="col-md-4"></div>
     </div>
+    <footer>
+        <div id="prompts">Instructions: Say Town to leave.
+        </div>
 
-    <script>
+
+    </footer>
+</body>
+<script>
     var hero = new Audio("./sounds/hero.mp3");
     var fairy = new Audio("./sounds/fairy.mp3");
     var owl = new Audio("./sounds/owl.mp3");
@@ -55,7 +72,7 @@
     var unicorn = new Audio("./sounds/unicorn.mp3");
     var shark = new Audio("./sounds/shark.mp3");
 
-        var commands = {
+    var commands = {
         'hero': function () {
             hero.play();
         },
@@ -80,7 +97,7 @@
         'shark': function () {
             shark.play();
         },
-        'town': function(){
+        'town': function () {
             window.location.href = "/hub"
         }
     };
@@ -91,4 +108,4 @@
     // Start listening. You can call this here, or attach this call to an event, button, etc.
     annyang.start();
     annyang.isListening()
-    </script>
+</script>

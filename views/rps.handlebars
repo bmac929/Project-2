@@ -1,16 +1,21 @@
-<div id="header">
-    <header id="head">
-        Username: <div id="uname"></div> Points: <div id="points"></div>
+<body id="rps">
+    <div id="header">
+        <header id="head">
+            <img id="crono" src="images/Crono-Front.gif">
+            <div id="uname"></div>
+            <img id="coin" src="images/coin.png">
+            <div id="points"></div>
 
-    </header>
-</div>
-<br><br><br><br><br><br><br>
 
-{{!-- <button id=startspeech>Click here to start Speech Recognition</button>
+        </header>
+    </div>
+    <br><br><br><br><br><br><br>
+
+    {{!-- <button id=startspeech>Click here to start Speech Recognition</button>
 <button id=rock>rock</button>
 <button id=paper>paper</button>
 <button id=scissors>scissors</button> --}}
-{{!-- <div class="row">
+    {{!-- <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4 card">
         <h2 class="text-center">Rock Paper Scissors - Voice Controlled</h2>
@@ -25,30 +30,31 @@
     <div class="col-md-4"></div>
 </div> --}}
 
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-2 card text-center bg-primary text-white">
-        <h4>YOU:</h4>
-        <img class="mx-auto my-auto py-auto" style="width: 75%" id="userchoice" src="images/paper.png" alt="">
-    </div>
-    <div class="col-md-2 card text-center bg-success text-white">
-        <h4>RESULT:</h4>
-        <img class="mx-auto my-auto py-auto" style="width: 75%" src="" id=result></img>
-    </div>
-    <div class="col-md-2 card text-center bg-secondary text-white">
-        <h4>Me:</h4>
-        <img class="mx-auto my-auto py-auto" style="width: 75%" id="computerchoice" src="images/rock.png" alt="">
-    </div>
-    <div class="col-md-3"></div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2 card text-center bg-primary text-white">
+            <h4>YOU:</h4>
+            <img class="mx-auto my-auto py-auto" style="width: 75%" id="userchoice" src="images/paper.png" alt="">
+        </div>
+        <div class="col-md-2 card text-center bg-success text-white">
+            <h4>RESULT:</h4>
+            <img class="mx-auto my-auto py-auto" style="width: 75%" src="" id=result></img>
+        </div>
+        <div class="col-md-2 card text-center bg-secondary text-white">
+            <h4>Me:</h4>
+            <img class="mx-auto my-auto py-auto" style="width: 75%" id="computerchoice" src="images/rock.png" alt="">
+        </div>
+        <div class="col-md-3"></div>
 
-</div>
-<footer>
-    <div id="prompts">Instructions: Say Rock, Paper, or Scissors and I'll pick one too. If you win, you get 50 points.
     </div>
-    <img id="crono" src="images/Crono-Front.gif">
+    <footer>
+        <div id="prompts">Instructions: Say Rock, Paper, or Scissors and I'll pick one too. If you win, you get 50
+            coins.
+        </div>
 
-</footer>
 
+    </footer>
+</body>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
