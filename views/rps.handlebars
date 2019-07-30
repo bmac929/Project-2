@@ -1,5 +1,5 @@
 <body id="rps">
-    <div id="header">
+    <div id="header" class="flex-container">
         <header id="head">
             <img id="crono" src="images/Crono-Front.gif">
             <div id="uname"></div>
@@ -34,28 +34,29 @@
         <div class="col-md-3"></div>
         <div class="col-md-2 card text-center bg-primary text-white">
             <h4>YOU:</h4>
-            <img class="mx-auto my-auto py-auto" style="width: 75%" id="userchoice" src="images/paper.png" alt="">
+            <img class="mx-auto my-auto py-auto" style="width: 75%" id="userchoice" src="images/question.png" alt="">
         </div>
         <div class="col-md-2 card text-center bg-success text-white">
             <h4>RESULT:</h4>
-            <img class="mx-auto my-auto py-auto" style="width: 75%" src="" id=result></img>
+            <img class="mx-auto my-auto py-auto" style="width: 75%" src="images/question.png" id="result"></img>
         </div>
         <div class="col-md-2 card text-center bg-secondary text-white">
             <h4>Me:</h4>
-            <img class="mx-auto my-auto py-auto" style="width: 75%" id="computerchoice" src="images/rock.png" alt="">
+            <img class="mx-auto my-auto py-auto" style="width: 75%" id="computerchoice" src="images/question.png" alt="">
         </div>
         <div class="col-md-3"></div>
 
     </div>
-    <footer>
-        <div id="prompts">Instructions: Say Rock, Paper, or Scissors and I'll pick one too. If you win, you get 50
-            coins. Say Go Back to go back to town.
-        </div>
+ <div class="flex-container">
+       <footer>
+           <div id="prompts">Instructions: Say Rock, Paper, or Scissors and I'll pick one too. If you win, you get 50
+               coins. Say Town to exit.
+           </div>
+           <span id="userscore" data-score={{Score}}></span>
+           <span id="userfirst" data-first={{firstname}}></span>
+       </footer>
+   </div>
 
-        <span id="userscore" data-score={{Score}}></span>
-        <span id="userfirst" data-first={{firstname}}></span>
-
-    </footer>
 </body>
 
 <!-- Optional JavaScript -->
@@ -148,7 +149,7 @@
 
     var commands = {
         'spock': function () {
-            $("#userchoice").attr("src", "images/spock.jpg");
+            $("#userchoice").attr("src", "images/spock.png");
         },
         'lizard': function () {
             $("#userchoice").attr("src", "images/LIZARD.png");

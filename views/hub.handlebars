@@ -1,5 +1,5 @@
 <body id="hub">
-    <div id="up">
+    {{!-- <div id="up">
         <button class="button" type="button"><i class="fas fa-arrow-circle-up"></i>Up</button>
     </div>
     <div id="left">
@@ -10,7 +10,7 @@
     </div>
     <div id="down">
         <button class="button" type="button">Down<i class="fas fa-arrow-circle-down"></i></button>
-    </div>
+    </div> --}}
 
     <p><img id="character" src="./images/Crono-Front.gif" data-still="./images/Crono-Front.gif"
             data-walkingleft="./images/Crono-walkingleft.gif" data-walkingright="./images/Crono-walkingright.gif"
@@ -20,13 +20,19 @@
     <div class="speech-bubble">
         <div class="arrow bottom right"></div>
         <p>Tell me where to go!</p>
-        <p>Say: </p> 
-        <p>Go Up for </p>
+        <p>Say: </p>
+        <p>"Go Up" for </p>
         <p>Rock Paper Scissors</p>
-        <p>Go Left for Stone Collector</p>
-        <p>Go Down for the Store</p>
-        <p>Go Right to go Home!</p>
+        <p>"Go Left" for Stone Collector</p>
+        <p>"Go Down" for the Store</p>
+        <p>"Go Right" to go Home!</p>
     </div>
+    <img src="./images/rps.jpg" alt="" class="fixed-top" style="left: 33%">
+    <img src="./images/stone.jpg" alt="" style=" position: absolute; top: 33%; left: 0%;">
+    <img src="./images/store.jpg" alt="" class="fixed-bottom" style="left: 33%">
+    <img src="./images/home.jpg" alt="" style=" position: absolute; top: 33%; right: 0%;">
+
+
     <script>
 
         var footsteps = new Audio("./sounds/footsteps.mp3");
@@ -45,7 +51,23 @@
                     window.location.href = "/rps"
                 }, 1750)
             },
+            'rock paper scissors': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingup"));
+                footsteps.play();
+                $("#character").animate({ top: "-50%" }, 2000);
+                setTimeout(function () {
+                    window.location.href = "/rps"
+                }, 1750)
+            },
             'go down': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingdown"));
+                footsteps.play();
+                $("#character").animate({ top: "+100%" }, 2000);
+                setTimeout(function () {
+                    window.location.href = "/store"
+                }, 1750)
+            },
+            'store': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingdown"));
                 footsteps.play();
                 $("#character").animate({ top: "+100%" }, 2000);
@@ -61,7 +83,23 @@
                     window.location.href = "/collector"
                 }, 1750)
             },
+            'stone collector': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingleft"));
+                footsteps.play();
+                $("#character").animate({ left: "-10%" }, 2000);
+                setTimeout(function () {
+                    window.location.href = "/collector"
+                }, 1750)
+            },
             'go right': function () {
+                $("#character").attr("src", $("#character").attr("data-walkingright"));
+                footsteps.play();
+                $("#character").animate({ left: "+=1100px" }, 2000);
+                setTimeout(function () {
+                    window.location.href = "/home"
+                }, 1750)
+            },
+            'home': function () {
                 $("#character").attr("src", $("#character").attr("data-walkingright"));
                 footsteps.play();
                 $("#character").animate({ left: "+=1100px" }, 2000);
