@@ -21,22 +21,22 @@ The user will sign-up (Passport) with First Name, Last Name, Email, Password to 
 
 Once the user is signed-in, they will be directed to the "town" page.  They can then chooose which direction they would like to go by speaking either of the following commands: "up", "down", "left", "right".  
 
-**Component 1: "Up" - 
+**Component 1: say "Go Up" or "Rock, Paper, Scissors"- 
 Game: Rock, Paper, Scissors**
 
 The user will play Rock, Paper, Scissors with the computer.  The user will say one of the following options per round out loud: "rock", "paper", "sciossors". If the user wins, they will earn 50 coins.  The user can play the computer as many times as they would like!  
 
-**Component 2: "Left" -
+**Component 2: say "Go Left" or "Crystal Collector"-
 Game: Crystal Collector**
 
 For this game, the user must match the number displayed on the screen by saying the name of the crystals provided.  Each value of the crystal is shown to help the user as they add value to match the computer generated number.  The options the user can say are: "water", "fire", "thunder", "dawn".  Once the number is matched, new numbers are generated for another round of fun! 
 
-**Component 3: "Down" -
+**Component 3: say "Down" or "Store"-
 Trophy Store**
 
 The user can view all of the trophies for sale in the Trophy Store.  Depending on the amount of coins they have, they will be able to purchase a trophy.  Once a trophy is purchased, it will hide from the screen and be added to the user's collection.  The database is then updated to reflect these changes.  
 
-**Component 4: "Right" -
+**Component 4: say "Right" or "Home"-
 Collection**
 
 The user can view the trophies they have purchased.  This is also a reflection of the information that is in the database. The more trophies they purchase, the larger their collection grows! 
@@ -46,5 +46,8 @@ The first three functions of CRUD are used in the following ways:
 C(reate): Sign-up/Log-in
 R(ead): Every page load (games, store, home, etc.)
 U(pdate): Game won (and update of coins for user), purchase of trophies (through use of booleans)
+
+**Heroku Link:** 
+https://project2-mbjb.herokuapp.com/
 
 Members: Joe Nidever, Bryan McCann, Brooke Meyer, Mike Garcia 
